@@ -2,14 +2,14 @@ import {
   ArrowUturnLeftIcon,
   ArrowUturnRightIcon,
 } from '@heroicons/react/24/solid'
-import FaceEnum from '../types/faceEnum'
+import { FaceEnum } from '../types/enums'
 
-interface IActionControllerProp {
+interface IActionControllerProps {
   setIsRotateClockwise: (isRotateClockwise: boolean) => void
   setFaceToRotate: (faceToRotate: FaceEnum) => void
 }
 
-const ActionController = (props: IActionControllerProp) => {
+const ActionController = (props: IActionControllerProps) => {
   const { setIsRotateClockwise, setFaceToRotate } = props
 
   const handleRotate = (isClockwise: boolean, faceToRotate: FaceEnum) => {
@@ -90,7 +90,7 @@ const ActionController = (props: IActionControllerProp) => {
       </div>
       <div className="flex items-center my-2 gap-2">
         <p className="font-semibold">
-          Rotate bottom face <span className="text-white">(U)</span>:
+          Rotate bottom face <span className="text-white">(D)</span>:
         </p>
         <button
           className="bg-white hover:opacity-75 rounded-full"

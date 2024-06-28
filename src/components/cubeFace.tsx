@@ -1,29 +1,35 @@
+import CubeBoxType from '../types/cubeBox'
 import CubeBox from './cubeBox'
 
-interface CubeFaceProps {
-  color: string
-  position: string
+interface ICubeFaceProps {
+  cubeBoxList: Array<CubeBoxType>
 }
 
-const CubeFace = (props: CubeFaceProps) => {
-  const { color, position } = props
+const CubeFace = (props: ICubeFaceProps) => {
+  const { cubeBoxList } = props
 
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
-        <CubeBox color={color} id={`${position}1`} />
-        <CubeBox color={color} id={`${position}2`} />
-        <CubeBox color={color} id={`${position}3`} />
+        {cubeBoxList.slice(0, 3).map((cubeBox) => {
+          return (
+            <CubeBox key={cubeBox.id} color={cubeBox.color} id={cubeBox.id} />
+          )
+        })}
       </div>
       <div className="flex gap-2">
-        <CubeBox color={color} id={`${position}4`} />
-        <CubeBox color={color} id={`${position}5`} />
-        <CubeBox color={color} id={`${position}6`} />
+        {cubeBoxList.slice(3, 6).map((cubeBox) => {
+          return (
+            <CubeBox key={cubeBox.id} color={cubeBox.color} id={cubeBox.id} />
+          )
+        })}
       </div>
       <div className="flex gap-2">
-        <CubeBox color={color} id={`${position}7`} />
-        <CubeBox color={color} id={`${position}8`} />
-        <CubeBox color={color} id={`${position}9`} />
+        {cubeBoxList.slice(6, 9).map((cubeBox) => {
+          return (
+            <CubeBox key={cubeBox.id} color={cubeBox.color} id={cubeBox.id} />
+          )
+        })}
       </div>
     </div>
   )

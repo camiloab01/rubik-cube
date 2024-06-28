@@ -1,9 +1,9 @@
-interface CubeBoxInterface {
+interface ICubeBoxPops {
   id: string
   color: string
 }
 
-const CubeBox = (props: CubeBoxInterface) => {
+const CubeBox = (props: ICubeBoxPops) => {
   const { id, color } = props
   return (
     <div
