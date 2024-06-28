@@ -7,10 +7,17 @@ import { FaceEnum } from '../types/enums'
 interface IActionControllerProps {
   setIsRotateClockwise: (isRotateClockwise: boolean) => void
   setFaceToRotate: (faceToRotate: FaceEnum) => void
+  handleShuffleCube: () => void
+  handleResetCube: () => void
 }
 
 const ActionController = (props: IActionControllerProps) => {
-  const { setIsRotateClockwise, setFaceToRotate } = props
+  const {
+    setIsRotateClockwise,
+    setFaceToRotate,
+    handleResetCube,
+    handleShuffleCube,
+  } = props
 
   const handleRotate = (isClockwise: boolean, faceToRotate: FaceEnum) => {
     setIsRotateClockwise(isClockwise)
@@ -120,6 +127,20 @@ const ActionController = (props: IActionControllerProps) => {
           onClick={() => handleRotate(true, FaceEnum.Back)}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
+        </button>
+      </div>
+      <div className="flex justify-center items-center my-6 gap-2">
+        <button
+          className="bg-purple-700 hover:opacity-75 rounded-full"
+          onClick={handleShuffleCube}
+        >
+          <p className="font-semibold">Shuffle cube</p>
+        </button>
+        <button
+          className="bg-purple-700 hover:opacity-75 rounded-full"
+          onClick={handleResetCube}
+        >
+          <p className="font-semibold">Reset cube</p>
         </button>
       </div>
     </div>
