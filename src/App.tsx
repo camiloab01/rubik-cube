@@ -10,10 +10,11 @@ import { shuffleCube } from './util/cubeBoxListHelper'
 function App() {
   const [isRotateClockwise, setIsRotateClockwise] = useState<boolean>()
   const [faceToRotate, setFaceToRotate] = useState<FaceEnum>()
-  const [cubeBoxList, setCubeBoxList] = useState<Array<CubeBoxType>>()
+  const [cubeBoxList, setCubeBoxList] =
+    useState<Array<CubeBoxType>>(defaultCubeBoxList)
 
   const handleShuffleCube = () => {
-    const listToShuffle = cubeBoxList ? cubeBoxList : defaultCubeBoxList
+    const listToShuffle = [...cubeBoxList]
     setCubeBoxList(shuffleCube(listToShuffle))
   }
 
@@ -42,7 +43,7 @@ function App() {
         />
       </div>
       <div className="flex justify-center mt-20">
-        <Cube cubeBoxList={cubeBoxList ? cubeBoxList : defaultCubeBoxList} />
+        <Cube cubeBoxList={cubeBoxList} />
       </div>
     </>
   )
