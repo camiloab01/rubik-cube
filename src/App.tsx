@@ -5,7 +5,11 @@ import Cube from './components/cube'
 import { FaceEnum } from './types/enums'
 import CubeBoxType from './types/cubeBox'
 import defaultCubeBoxList from './data/defaultCubeBoxList'
-import { shuffleCube, uClockwisePermutation } from './util/cubeBoxListHelper'
+import {
+  shuffleCube,
+  uClockwisePermutation,
+  uCounterClockwisePermutation,
+} from './util/cubeBoxListHelper'
 
 function App() {
   const [isRotateClockwise, setIsRotateClockwise] = useState<boolean>()
@@ -29,7 +33,7 @@ function App() {
         setCubeBoxList(
           isRotateClockwise
             ? uClockwisePermutation(listToPermutate)
-            : defaultCubeBoxList
+            : uCounterClockwisePermutation(listToPermutate)
         )
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
