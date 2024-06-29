@@ -5,6 +5,7 @@ import Cube from './components/cube'
 import CubeBoxType from './types/cubeBox'
 import defaultCubeBoxList from './data/defaultCubeBoxList'
 import {
+  fClockwisePermutation,
   lClockwisePermutation,
   lCounterClockwisePermutation,
   shuffleCube,
@@ -45,6 +46,11 @@ function App() {
     setCubeBoxList(lCounterClockwisePermutation(listToPermutate))
   }
 
+  const handleFClockwise = () => {
+    const listToPermutate = [...cubeBoxList]
+    setCubeBoxList(fClockwisePermutation(listToPermutate))
+  }
+
   return (
     <>
       <div className="p-2">
@@ -59,6 +65,7 @@ function App() {
           handleUCounterClockwise={handleUCounterClockwise}
           handleLClockwise={handleLClockwise}
           handleLCounterClockwise={handleLCounterClockwise}
+          handleFClockwise={handleFClockwise}
         />
       </div>
       <div className="flex justify-center mt-20">
