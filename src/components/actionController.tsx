@@ -8,6 +8,7 @@ interface IActionControllerProps {
   handleResetCube: () => void
   handleUClockwise: () => void
   handleUCounterClockwise: () => void
+  handleLClockwise: () => void
 }
 
 const ActionController = (props: IActionControllerProps) => {
@@ -16,6 +17,7 @@ const ActionController = (props: IActionControllerProps) => {
     handleShuffleCube,
     handleUClockwise,
     handleUCounterClockwise,
+    handleLClockwise,
   } = props
 
   return (
@@ -50,7 +52,7 @@ const ActionController = (props: IActionControllerProps) => {
         </button>
         <button
           className="bg-blue-600 hover:opacity-75 rounded-full"
-          onClick={handleUClockwise}
+          onClick={handleLClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
