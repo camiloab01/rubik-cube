@@ -12,6 +12,7 @@ interface IActionControllerProps {
   handleLCounterClockwise: () => void
   handleFClockwise: () => void
   handleFCounterClockwise: () => void
+  handleRClockwise: () => void
 }
 
 const ActionController = (props: IActionControllerProps) => {
@@ -24,6 +25,7 @@ const ActionController = (props: IActionControllerProps) => {
     handleLCounterClockwise,
     handleFClockwise,
     handleFCounterClockwise,
+    handleRClockwise,
   } = props
 
   return (
@@ -92,7 +94,7 @@ const ActionController = (props: IActionControllerProps) => {
         </button>
         <button
           className="bg-green-600 hover:opacity-75 rounded-full"
-          onClick={handleUClockwise}
+          onClick={handleRClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
