@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import ActionController from './components/actionController'
 import Cube from './components/cube'
-import { FaceEnum } from './types/enums'
 import CubeBoxType from './types/cubeBox'
 import defaultCubeBoxList from './data/defaultCubeBoxList'
 import {
@@ -12,8 +11,6 @@ import {
 } from './util/cubeBoxListHelper'
 
 function App() {
-  const [isRotateClockwise, setIsRotateClockwise] = useState<boolean>()
-  const [faceToRotate, setFaceToRotate] = useState<FaceEnum>()
   const [cubeBoxList, setCubeBoxList] =
     useState<Array<CubeBoxType>>(defaultCubeBoxList)
 
@@ -26,18 +23,15 @@ function App() {
     setCubeBoxList(defaultCubeBoxList)
   }
 
-  useEffect(() => {
+  const handleUCounterClockwise = () => {
     const listToPermutate = [...cubeBoxList]
-    switch (faceToRotate) {
-      case FaceEnum.Upper:
-        setCubeBoxList(
-          isRotateClockwise
-            ? uClockwisePermutation(listToPermutate)
-            : uCounterClockwisePermutation(listToPermutate)
-        )
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [faceToRotate, isRotateClockwise])
+    setCubeBoxList(uCounterClockwisePermutation(listToPermutate))
+  }
+
+  const handleUClockwise = () => {
+    const listToPermutate = [...cubeBoxList]
+    setCubeBoxList(uClockwisePermutation(listToPermutate))
+  }
 
   return (
     <>
@@ -47,10 +41,10 @@ function App() {
       </div>
       <div className="absolute right-0 mr-5 border-[1px] border-white p-4">
         <ActionController
-          setFaceToRotate={setFaceToRotate}
-          setIsRotateClockwise={setIsRotateClockwise}
           handleResetCube={handleResetCube}
           handleShuffleCube={handleShuffleCube}
+          handleUClockwise={handleUClockwise}
+          handleUCounterClockwise={handleUCounterClockwise}
         />
       </div>
       <div className="flex justify-center mt-20">

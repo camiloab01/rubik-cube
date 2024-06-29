@@ -2,27 +2,21 @@ import {
   ArrowUturnLeftIcon,
   ArrowUturnRightIcon,
 } from '@heroicons/react/24/solid'
-import { FaceEnum } from '../types/enums'
 
 interface IActionControllerProps {
-  setIsRotateClockwise: (isRotateClockwise: boolean) => void
-  setFaceToRotate: (faceToRotate: FaceEnum) => void
   handleShuffleCube: () => void
   handleResetCube: () => void
+  handleUClockwise: () => void
+  handleUCounterClockwise: () => void
 }
 
 const ActionController = (props: IActionControllerProps) => {
   const {
-    setIsRotateClockwise,
-    setFaceToRotate,
     handleResetCube,
     handleShuffleCube,
+    handleUClockwise,
+    handleUCounterClockwise,
   } = props
-
-  const handleRotate = (isClockwise: boolean, faceToRotate: FaceEnum) => {
-    setIsRotateClockwise(isClockwise)
-    setFaceToRotate(faceToRotate)
-  }
 
   return (
     <div className="flex flex-col">
@@ -33,13 +27,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-yellow-400 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Upper)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-yellow-400 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Upper)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
@@ -50,13 +44,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-blue-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Left)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-blue-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Left)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
@@ -67,13 +61,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-red-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Front)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-red-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Front)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
@@ -84,13 +78,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-green-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Right)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-green-600 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Right)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
@@ -101,13 +95,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-white hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Bottom)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-white hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Bottom)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
@@ -118,13 +112,13 @@ const ActionController = (props: IActionControllerProps) => {
         </p>
         <button
           className="bg-orange-500 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(false, FaceEnum.Back)}
+          onClick={handleUCounterClockwise}
         >
           <ArrowUturnLeftIcon className="size-3 text-black" />
         </button>
         <button
           className="bg-orange-500 hover:opacity-75 rounded-full"
-          onClick={() => handleRotate(true, FaceEnum.Back)}
+          onClick={handleUClockwise}
         >
           <ArrowUturnRightIcon className="size-3 text-black" />
         </button>
