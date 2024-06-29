@@ -315,6 +315,78 @@ export const fClockwisePermutation = (
   return permutatedList
 }
 
+// [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
+// rotate 'f' clockwise
+// [u1,u2,u3,u4,u5,u6,r1,r4,r7,l1,l2,u9,l4,l5,u8,l7,l8,u7,f3,f6,f9,f2,f5,f8,f1,f4,f7,d3,r2,r3,d2,r5,r6,d1,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,l3,l6,l9,d4,d5,d6,d7,d8,d9]
+//  00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53
+export const fCounterClockwisePermutation = (
+  cubeBoxList: Array<CubeBoxType>
+): Array<CubeBoxType> => {
+  const permutatedList = []
+  const range1 = cubeBoxList.slice(0, 6) //u1,u2,u3,u4,u5,u6
+  permutatedList.push(...range1)
+  const item1 = cubeBoxList[27] //r1
+  permutatedList.push(item1)
+  const item2 = cubeBoxList[30] //r4
+  permutatedList.push(item2)
+  const item3 = cubeBoxList[33] //r7
+  permutatedList.push(item3)
+  const item4 = cubeBoxList[9] //l1
+  permutatedList.push(item4)
+  const item5 = cubeBoxList[10] //l2
+  permutatedList.push(item5)
+  const item6 = cubeBoxList[8] //u9
+  permutatedList.push(item6)
+  const range2 = cubeBoxList.slice(12, 14) //l4,l5
+  permutatedList.push(...range2)
+  const item7 = cubeBoxList[7] //u8
+  permutatedList.push(item7)
+  const range3 = cubeBoxList.slice(15, 17) //l7,l8
+  permutatedList.push(...range3)
+  const item8 = cubeBoxList[6] //u7
+  permutatedList.push(item8)
+  const item9 = cubeBoxList[20] //f3
+  permutatedList.push(item9)
+  const item10 = cubeBoxList[23] //f6
+  permutatedList.push(item10)
+  const item11 = cubeBoxList[26] //f9
+  permutatedList.push(item11)
+  const item12 = cubeBoxList[19] //f2
+  permutatedList.push(item12)
+  const item13 = cubeBoxList[22] //f5
+  permutatedList.push(item13)
+  const item14 = cubeBoxList[25] //f8
+  permutatedList.push(item14)
+  const item15 = cubeBoxList[18] //f1
+  permutatedList.push(item15)
+  const item16 = cubeBoxList[21] //f4
+  permutatedList.push(item16)
+  const item17 = cubeBoxList[24] //f7
+  permutatedList.push(item17)
+  const item18 = cubeBoxList[47] //d3
+  permutatedList.push(item18)
+  const range4 = cubeBoxList.slice(28, 30) //r2,r3
+  permutatedList.push(...range4)
+  const item19 = cubeBoxList[46] //d2
+  permutatedList.push(item19)
+  const range5 = cubeBoxList.slice(31, 33) //r5,r6
+  permutatedList.push(...range5)
+  const item20 = cubeBoxList[45] //d1
+  permutatedList.push(item20)
+  const range6 = cubeBoxList.slice(34, 45) //r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9
+  permutatedList.push(...range6)
+  const item21 = cubeBoxList[11] //l3
+  permutatedList.push(item21)
+  const item22 = cubeBoxList[14] //l6
+  permutatedList.push(item22)
+  const item23 = cubeBoxList[17] //l9
+  permutatedList.push(item23)
+  const range7 = cubeBoxList.slice(48, 54) //d4,d5,d6,d7,d8,d9
+  permutatedList.push(...range7)
+
+  return permutatedList
+}
+
 export const shuffleCube = (
   cubeBoxList: Array<CubeBoxType>
 ): Array<CubeBoxType> => {
