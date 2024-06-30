@@ -1,7 +1,13 @@
 import CubeBoxType from '../types/cubeBox'
 
+// ***********************************************************************************************
+// These are the functions that transform the cube
+// from its solved state to the different permutations.
+// They take an array, and transform it based on the rotation. Taking as a base the solved state
+// ***********************************************************************************************
+
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'u' clockwise
+// rotate 'u' clockwise 👇🏻
 // [u7,u4,u1,u8,u5,u2,u9,u6,u3,f1,f2,f3,l4,l5,l6,l7,l8,l9,r1,r2,r3,f4,f5,f6,f7,f8,f9,b1,b2,b3,r4,r5,r6,r7,r8,r9,l1,l2,l3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
 export const uClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -47,7 +53,7 @@ export const uClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'u' counter clockwise
+// rotate 'u' counter clockwise 👇🏻
 // [u3,u6,u9,u2,u5,u8,u1,u4,u7,b1,b2,b3,l4,l5,l6,l7,l8,l9,l1,l2,l3,f4,f5,f6,f7,f8,f9,f1,f2,f3,r4,r5,r6,r7,r8,r9,r1,r2,r3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
 export const uCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -93,7 +99,7 @@ export const uCounterClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'l' clockwise
+// rotate 'l' clockwise 👇🏻
 // [b9,u2,u3,b6,u5,u6,b3,u8,u9,l7,l4,l1,l8,l5,l2,l9,l6,l3,u1,f2,f3,u4,f5,f6,u7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,d7,b4,b5,d4,b7,b8,d1,f1,d2,d3,f4,d5,d6,f7,d8,d9]
 export const lClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -170,7 +176,7 @@ export const lClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'l' counter clockwise
+// rotate 'l' counter clockwise 👇🏻
 // [f1,u2,u3,f4,u5,u6,f7,u8,u9,l3,l6,l9,l2,l5,l8,l1,l4,l7,d1,f2,f3,d4,f5,f6,d7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,u7,b4,b5,u4,b7,b8,u1,b9,d2,d3,b6,d5,d6,b3,d8,d9]
 export const lCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -247,7 +253,7 @@ export const lCounterClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'f' clockwise 👇🏻
 // [u1,u2,u3,u4,u5,u6,l9,l6,l3,l1,l2,d1,l4,l5,d2,l7,l8,d3,f7,f4,f1,f8,f5,f2,f9,f6,f3,u7,r2,r3,u8,r5,r6,u9,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,r7,r4,r1,d4,d5,d6,d7,d8,d9]
 export const fClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -318,7 +324,7 @@ export const fClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'f' counter clockwise 👇🏻
 // [u1,u2,u3,u4,u5,u6,r1,r4,r7,l1,l2,u9,l4,l5,u8,l7,l8,u7,f3,f6,f9,f2,f5,f8,f1,f4,f7,d3,r2,r3,d2,r5,r6,d1,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,l3,l6,l9,d4,d5,d6,d7,d8,d9]
 export const fCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -389,7 +395,7 @@ export const fCounterClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'r' clockwise 👇🏻
 // [u1,u2,f3,u4,u5,f6,u7,u8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,d3,f4,f5,d6,f7,f8,d9,r7,r4,r1,r8,r5,r2,r9,r6,r3,u9,b2,b3,u6,b5,b6,u3,b8,b9,d1,d2,b7,d4,d5,b4,d7,d8,b1]
 export const rClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -464,7 +470,7 @@ export const rClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'r' counter clockwise 👇🏻
 // [u1,u2,b7,u4,u5,b4,u7,u8,b1,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,u3,f4,f5,u6,f7,f8,u9,r3,r6,r9,r2,r5,r8,r1,r4,r7,d9,b2,b3,d6,b5,b6,d3,b8,b9,d1,d2,f3,d4,d5,f6,d7,d8,f9]
 export const rCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -539,7 +545,7 @@ export const rCounterClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'd' clockwise 👇🏻
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,b7,b8,b9,f1,f2,f3,f4,f5,f6,l7,l8,l9,r1,r2,r3,r4,r5,r6,f7,f8,f9,b1,b2,b3,b4,b5,b6,r7,r8,r9,d7,d4,d1,d8,d5,d2,d9,d6,d3]
 export const dClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -584,7 +590,7 @@ export const dClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'd' counter clockwise 👇🏻
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,f7,f8,f9,f1,f2,f3,f4,f5,f6,r7,r8,r9,r1,r2,r3,r4,r5,r6,b7,b8,b9,b1,b2,b3,b4,b5,b6,l7,l8,l9,d3,d6,d9,d2,d5,d8,d1,d4,d7]
 export const dCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -629,7 +635,7 @@ export const dCounterClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'b' clockwise 👇🏻
 // [r3,r6,r9,u4,u5,u6,u7,u8,u9,u3,l2,l3,u2,l5,l6,u1,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,d9,r4,r5,d8,r7,r8,d7,b7,b4,b1,b8,b5,b2,b9,b6,b3,d1,d2,d3,d4,d5,d6,l1,l4,l7]
 export const bClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>
@@ -696,7 +702,7 @@ export const bClockwisePermutation = (
 }
 
 // [u1,u2,u3,u4,u5,u6,u7,u8,u9,l1,l2,l3,l4,l5,l6,l7,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,r3,r4,r5,r6,r7,r8,r9,b1,b2,b3,b4,b5,b6,b7,b8,b9,d1,d2,d3,d4,d5,d6,d7,d8,d9]
-// rotate 'f' clockwise
+// rotate 'b' counter clockwise 👇🏻
 // [l7,l4,l1,u4,u5,u6,u7,u8,u9,d7,l2,l3,d8,l5,l6,d9,l8,l9,f1,f2,f3,f4,f5,f6,f7,f8,f9,r1,r2,u1,r4,r5,u2,r7,r8,u3,b3,b6,b9,b2,b5,b8,b1,b4,b7,d1,d2,d3,d4,d5,d6,r9,r6,r3]
 export const bCounterClockwisePermutation = (
   cubeBoxList: Array<CubeBoxType>

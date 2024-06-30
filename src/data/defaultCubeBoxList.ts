@@ -1,6 +1,12 @@
 import CubeBoxType from '../types/cubeBox'
 import { ColorsEnum } from '../types/enums'
 
+// ***********************************************************************************************
+// This is the default or solved state of the cube.
+// We will use this state to permutate or rotate the
+// other cube states (see: ./util/cubeBoxListHelper.ts)
+// ***********************************************************************************************
+
 const defaultCubeBoxList: Array<CubeBoxType> = [
   { id: 'U1', color: ColorsEnum.Yellow },
   { id: 'U2', color: ColorsEnum.Yellow },
